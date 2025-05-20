@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compose a Post</title>
+
+    <style>
+        /* Apply styles to the whole page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light grey */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 500px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Fix form layout */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Labels */
+        label {
+            display: block;  /* ✅ Labels appear above inputs */
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Input and Textarea */
+        .input-field,
+        .textarea-field {
+            width: 100%;  /* ✅ Expands input to full width */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Textarea height */
+        .textarea-field {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Button */
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>Compose a Post</h1>
+        <form action="/new" method="POST">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" class="input-field" required>
+            
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" class="textarea-field" required></textarea>
+            
+            <button type="submit" class="btn">Publish</button>
+        </form>
+    </div>
+
+</body>
+</html>
